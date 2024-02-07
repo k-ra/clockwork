@@ -11,7 +11,7 @@
 <style>
   .page-container {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     height: 100vh;
     flex-direction: row;
