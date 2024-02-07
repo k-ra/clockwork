@@ -25,7 +25,7 @@
       <div class="time-slot">
         <div class="slot-content">
           <div class="time-label">{hour}</div>
-            <TimeSlot timeSlot={hour} entries={hourlyEntries[hour] || []} />
+            <TimeSlot entries={hourlyEntries[hour] || []} />
           </div>
         {#if index < hours.length - 1}
           <div class="grid-line"></div>

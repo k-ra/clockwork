@@ -1,5 +1,4 @@
 <script>
-    export let timeSlot;
     export let entries;
 
     // Constants for the width increment
