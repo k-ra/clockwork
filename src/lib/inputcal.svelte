@@ -6,7 +6,7 @@
     let plugins = [TimeGrid, Interaction];
     let options = {
         hiddenDays: [1, 2, 4, 6],
-        view: "timeGridWeek",
+        view: "timeGridDay",
         allDaySlot: false,
         headerToolbar: { start: "", center: "title", end: "" },
         date: "2024-02-07",
@@ -25,6 +25,13 @@
         selectBackgroundColor: "rgb(151, 204, 151)",
     };
 
+    function submitEvents() {
+        let events = ec.getEvents();
+        
+        console.log(events);
+    }
+
+
     function getColor() {
         if (ec.getOption("selectBackgroundColor") ==  "rgb(151, 204, 151)" )
             return "rgb(110, 224, 110)"
@@ -40,19 +47,37 @@
     }
 </script>
 
-<div>
-  <h3>color in your availability</h3>
+<div class="inputcal-container">
+  <div>
+    <h3>color in your availability</h3>
 
-  <div class="palette">
-    <button id="green" on:click={setGreen}> green </button>
-    <button id="orange" on:click={setOrange}> orange </button>
+    <div class="palette">
+      <button id="green" on:click={setGreen}> green </button>
+      <button id="orange" on:click={setOrange}> orange </button>
+    </div>
+  
+    <Calendar bind:this={ec} {options} {plugins} />
   </div>
-
-  <Calendar bind:this={ec} {options} {plugins} />
+  <div class="submit-container">
+    <button on:click={submitEvents} id="submit">Submit</button>
+  </div>
 </div>
 
 <style>
     @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200;300&display=swap");
+    .inputcal-container { 
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 100vh;
+        flex-direction: row;
+    }
+
+    .submit-container {
+        margin-left: 4rem;
+        margin-right: 4rem;
+    }
+
     button {
         display: inline-block;
         outline: none;
@@ -80,6 +105,10 @@
 
     #orange {
         background-color: rgb(251, 164, 105);
+    }
+
+    #submit {
+        background-color: #aaadb3;
     }
 
     .palette {
