@@ -40,14 +40,16 @@
     }
 </script>
 
-<h3>color in your availability</h3>
+<div>
+  <h3>color in your availability</h3>
 
-<div class="palette">
+  <div class="palette">
     <button id="green" on:click={setGreen}> green </button>
     <button id="orange" on:click={setOrange}> orange </button>
-</div>
+  </div>
 
-<Calendar bind:this={ec} {options} {plugins} />
+  <Calendar bind:this={ec} {options} {plugins} />
+</div>
 
 <style>
     @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200;300&display=swap");
