@@ -32,7 +32,7 @@
             return "rgb(251, 164, 105)"
     }
     function setGreen() {
-        ec.setOption("selectBackgroundColor", "rgb(110, 224, 110)");
+        ec.setOption("selectBackgroundColor", "rgb(151, 204, 151)");
     }
 
     function setOrange() {
@@ -42,7 +42,7 @@
 
 <h3>color in your availability</h3>
 
-<div class="left">
+<div class="palette">
     <button id="green" on:click={setGreen}> green </button>
     <button id="orange" on:click={setOrange}> orange </button>
 </div>
@@ -80,8 +80,8 @@
         background-color: rgb(251, 164, 105);
     }
 
-    .left {
-        padding-left: 40px;
+    .palette {
+        text-align: center;
     }
 
     h3 {
