@@ -2,6 +2,10 @@
     import Calendar from "@event-calendar/core";
     import TimeGrid from "@event-calendar/time-grid";
     import Interaction from "@event-calendar/interaction";
+    import { entries } from "../stores/index.js";
+    import { get } from "svelte/store";
+
+
     let ec;
     let plugins = [TimeGrid, Interaction];
     let options = {
@@ -26,9 +30,33 @@
     };
 
     function submitEvents() {
-        let events = ec.getEvents();
+        let events = ec.getEvents(); // Your events
         
-        console.log(events);
+        // Update the entries store with new events
+        entries.update(currentEntries => {
+            const updatedEntries = [...currentEntries];
+            events.forEach(event => {
+                // Convert the start and end times to the format we use
+                let start = event.start;
+                let period = start.getHours() >= 12 ? "PM" : "AM";
+                let hours = start.getHours() % 12 || 12;
+                let minutes = start.getMinutes().toString().padStart(2, "0");
+                let startTime = `${hours}:${minutes} ${period}`;
+
+                let end = event.end;
+                let endPeriod = end.getHours() >= 12 ? "PM" : "AM";
+                let endHours = end.getHours() % 12 || 12;
+                let endMinutes = end.getMinutes().toString().padStart(2, "0");
+                let endTime = `${endHours}:${endMinutes} ${endPeriod}`;
+
+                let type = event.backgroundColor === "rgb(110, 224, 110)" ? "available" : "possible";
+                updatedEntries.push({ start: startTime, end: endTime, type });
+            });
+            return updatedEntries;
+        });
+
+        // Log the updated store value
+        console.log('Updated entries:', get(entries));
     }
 
 
