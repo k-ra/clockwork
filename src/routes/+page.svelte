@@ -1,7 +1,5 @@
 <script>
-    import InputCal from '../lib/inputcal.svelte';
+  import Inputcal from '../lib/inputcal.svelte';
 </script>
 
-<main>
-  <InputCal />
-</main>
+<Inputcal/>
