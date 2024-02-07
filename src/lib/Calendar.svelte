@@ -3,7 +3,7 @@
   import { formatHour, parseHour, isInTimeRange } from '../utils/timeHelpers';
   import entriesData from '../assets/entriesData';
 
-  let hours = Array.from({ length: 24 }, (_, i) => formatHour(i));
+  let hours = Array.from({ length: 13 }, (_, i) => formatHour(9 + i));
 
   // Function to generate entries for each hour
   function generateHourlyEntries(hours, entriesData) {
@@ -37,6 +37,8 @@
   
   
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200;300&display=swap');
+  
   .day-view-calendar {
     display: flex;
     flex-direction: column;
@@ -65,6 +67,7 @@
     width: 80px;
     padding-right: 10px;
     text-align: right;
+    font-family: 'Noto Sans', sans-serif;
   }
 </style>
   

@@ -49,9 +49,9 @@
         border-radius: 10%;
     }
     .available {
-        background-color: green;
+        background-color: rgb(149, 225, 149);
     }
     .possible {
-        background-color: orange;
+        background-color: rgb(251, 164, 105);
     }
 </style>
