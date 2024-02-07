@@ -1,9 +1,12 @@
 <script>
   import TimeSlot from '../lib/TimeSlot.svelte';
   import { formatHour, parseHour, isInTimeRange } from '../utils/timeHelpers';
-  import entriesData from '../assets/entriesData';
+  import { entries } from '../stores/index.js';
 
   let hours = Array.from({ length: 13 }, (_, i) => formatHour(9 + i));
+
+  // Create entriesData from the store
+  $: entriesData = $entries;
 
   // Function to generate entries for each hour
   function generateHourlyEntries(hours, entriesData) {
@@ -15,7 +18,7 @@
     return hourlyEntries;
   }
 
-  let hourlyEntries = generateHourlyEntries(hours, entriesData);
+  $: hourlyEntries = generateHourlyEntries(hours, entriesData);
 </script>
   
 
