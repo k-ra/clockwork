@@ -3,8 +3,8 @@
   import ViewCal from '../lib/Calendar.svelte';
 </script>
 
+<InputCal/>
 <div class="page-container">
-  <InputCal/>
   <ViewCal />
 </div>
 
