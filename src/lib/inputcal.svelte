@@ -17,20 +17,26 @@
         editable: true,
         select: function (info) {
             //ask if green or orange
-            ec.addEvent(info);
+            let colorInfo = {...info, backgroundColor: getColor()};
+            ec.addEvent(colorInfo);
+            // ...info + color
         },
         eventBackgroundColor: "rgb(110, 224, 110)",
         selectBackgroundColor: "rgb(151, 204, 151)",
     };
 
+    function getColor() {
+        if (ec.getOption("selectBackgroundColor") ==  "rgb(151, 204, 151)" )
+            return "rgb(110, 224, 110)"
+        else
+            return "rgb(251, 164, 105)"
+    }
     function setGreen() {
         ec.setOption("selectBackgroundColor", "rgb(110, 224, 110)");
-        //ec.setOption("eventBackgroundColor", "rgb(151, 204, 151)");
     }
 
     function setOrange() {
         ec.setOption("selectBackgroundColor", "rgb(207, 160, 129)");
-        //ec.setOption("eventBackgroundColor", "rgb(251, 164, 105)");
     }
 </script>
 
