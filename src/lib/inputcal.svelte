@@ -80,8 +80,8 @@
     <h3>color in your availability</h3>
 
     <div class="palette">
-      <button id="green" on:click={setGreen}> green </button>
-      <button id="orange" on:click={setOrange}> orange </button>
+      <button id="green" on:click={setGreen}> Available </button>
+      <button id="orange" on:click={setOrange}> Possible </button>
     </div>
   
     <Calendar bind:this={ec} {options} {plugins} />
