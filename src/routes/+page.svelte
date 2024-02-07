@@ -1,25 +1,23 @@
-<script lang="ts" >
+<script lang="ts"> 
     import Calendar from '@event-calendar/core';
     import TimeGrid from '@event-calendar/time-grid';
     let ec;
     let plugins = [TimeGrid];
     let options = {
-         hiddenDays: [1, 2, 6],
+        hiddenDays: [1, 2, 6],
         view: 'timeGridWeek',
         allDaySlot: false,
         headerToolbar: {start: '', center: 'title', end: ''},
         date: '2024-02-07',
-        selectable: true,
-        select: function (info) {
-          ec.addEvent(info);
-        }
+        slotMaxTime: '21:00:00',
+        slotMinTime: '8:00:00',
+        selectable: true
     };
 </script>
 
 <h3>color in the lines!</h3>
 <p>the color part is still loading</p>
-
-<Calendar bind:this={ec} {plugins} {options} />
+<Calendar bind:this={ec} {options} {plugins}/>
 
 <style>
     h3 {
