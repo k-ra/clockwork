@@ -1,10 +1,5 @@
 [
     {
-        "start": "9:00 AM",
-        "end": "10:00 AM",
-        "type": "available"
-    },
-    {
         "start": "11:00 AM",
         "end": "12:00 PM",
         "type": "available"
@@ -53,6 +48,11 @@
     "start": "6:00 PM",
     "end": "8:00 PM",
     "type": "available"
+    },
+    {
+      "start": "7:00 PM",
+      "end": "10:00 PM",
+      "type": "available"
     }
 ]
   

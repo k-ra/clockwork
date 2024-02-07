@@ -42,7 +42,7 @@
   .day-view-calendar {
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 20%;
     max-height: 80vh;
     overflow-y: auto;
     border: 1px solid #ccc;
@@ -55,7 +55,7 @@
   .time-slot {
     display: flex;
     align-items: center;
-    height: 65px;
+    height: 50px;
     border-top: 1px solid #eee; /* Replace grid-line with a border */
   }
   .slot-content {
@@ -64,7 +64,7 @@
     width: 100%;
   }
   .time-label {
-    width: 80px;
+    width: 70px;
     padding-right: 10px;
     text-align: right;
     font-family: 'Noto Sans', sans-serif;

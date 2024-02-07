@@ -39,8 +39,8 @@
     .bar-container {
         display: flex;
         align-items: center;
-        height: 60px;
-        background-color: #f0f0f0;
+        height: 50px;
+        padding-top: 10px;
         margin-left: 10px;
     }
     .bar {
