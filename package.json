@@ -16,6 +16,7 @@
   },
   "type": "module",
   "dependencies": {
+    "@event-calendar/interaction": "^2.6.1",
     "@event-calendar/time-grid": "^2.6.1"
   }
 }

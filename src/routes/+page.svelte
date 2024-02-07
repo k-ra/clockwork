@@ -1,11 +1,12 @@
 <script>
-  import CalendarComponent from '../lib/Calendar.svelte';
+  import InputCal from '../lib/inputcal.svelte';
+  import ViewCal from '../lib/Calendar.svelte';
 </script>
 
 <div class="page-container">
-  <CalendarComponent />
+  <InputCal/>
+  <ViewCal />
 </div>
-
 
 <style>
   .page-container {
@@ -16,3 +17,5 @@
     flex-direction: column;
   }
 </style>
+
+
