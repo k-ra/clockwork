@@ -47,10 +47,8 @@
     flex-direction: column;
     width: 20%;
     max-height: 80vh;
-    overflow-y: auto;
     border: 1px solid #ccc;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 20px;
   }
   .time-grid {
     position: relative;
