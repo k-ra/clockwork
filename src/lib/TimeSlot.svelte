@@ -2,7 +2,7 @@
     export let entries;
 
     // Constants for the width increment
-    const WIDTH_INCREMENT = 40; // Adjust this value based on your UI requirements
+    const WIDTH_INCREMENT = 40;
 
     // Calculate widths for each availability type
     function calculateWidths(entries) {
@@ -12,7 +12,6 @@
             if (entry.type === 'available') {
                 availableWidth += WIDTH_INCREMENT;
             } else if (entry.type === 'possible') {
-                // Assuming you want the possible to fill the rest, it may not need to increment based on entries
                 possibleWidth += WIDTH_INCREMENT;
             }
         });
