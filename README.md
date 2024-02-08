@@ -4,17 +4,17 @@ Calendar View: vkurko.github.io/calendar/ and therefore under the MIT License.
 
 ## FEEDBACK NOTES
 
-Change button color to show that it is pressed (shift down and make darker)
+- [X] Change button color to show that it is pressed (shift down and make darker)
 
-Think about lower time increments (what will it look like?)
+- [ ] Add a hover effect showing the number of people available in a slot
 
-Will it support multiple days (what would that look like?)
+- [ ] Think about lower time increments (what will it look like?)
 
-Have something to reflect total people and number out of total
+- [ ] Will it support multiple days (what would that look like?)
 
-undo, hover, 
+- [ ] undo, hover, 
 
-writeup: more days, limitations and challenges of library, 30 min block, talk ab 
+- [ ] writeup: more days, limitations and challenges of library, 30 min block, talk ab 
 svelte versus flask
 
-change submit button color to something other than gray
+- [ ] change submit button color to something other than gray
