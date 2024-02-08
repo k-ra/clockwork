@@ -5,6 +5,7 @@
     import Button from "./components/Button.svelte";
     import { entries } from "../stores/index.js";
     import { get } from "svelte/store";
+    import { parseEventTime } from "../utils/inputCalUtils";
 
 
     let ec;
@@ -37,21 +38,9 @@
         entries.update(currentEntries => {
             const updatedEntries = [...currentEntries];
             events.forEach(event => {
-                // Convert the start and end times to the format we use
-                let start = event.start;
-                let period = start.getHours() >= 12 ? "PM" : "AM";
-                let hours = start.getHours() % 12 || 12;
-                let minutes = start.getMinutes().toString().padStart(2, "0");
-                let startTime = `${hours}:${minutes} ${period}`;
+                const { start, end, type } = parseEventTime(event);
 
-                let end = event.end;
-                let endPeriod = end.getHours() >= 12 ? "PM" : "AM";
-                let endHours = end.getHours() % 12 || 12;
-                let endMinutes = end.getMinutes().toString().padStart(2, "0");
-                let endTime = `${endHours}:${endMinutes} ${endPeriod}`;
-
-                let type = event.backgroundColor === "rgb(110, 224, 110)" ? "available" : "possible";
-                updatedEntries.push({ start: startTime, end: endTime, type });
+                updatedEntries.push({ start, end, type });
             });
             return updatedEntries;
         });
