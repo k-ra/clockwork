@@ -6,7 +6,7 @@ Calendar View: vkurko.github.io/calendar/ and therefore under the MIT License.
 
 - [X] Change button color to show that it is pressed (shift down and make darker)
 
-- [ ] Add a hover effect showing the number of people available in a slot
+- [X] Add a hover effect showing the number of people available in a slot
 
 - [ ] Think about lower time increments (what will it look like?)
 
