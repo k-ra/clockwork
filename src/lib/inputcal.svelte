@@ -2,6 +2,7 @@
     import Calendar from "@event-calendar/core";
     import TimeGrid from "@event-calendar/time-grid";
     import Interaction from "@event-calendar/interaction";
+    import Button from "./components/Button.svelte";
     import { entries } from "../stores/index.js";
     import { get } from "svelte/store";
 
@@ -59,18 +60,28 @@
         console.log('Updated entries:', get(entries));
     }
 
-
     function getColor() {
         if (ec.getOption("selectBackgroundColor") ==  "rgb(151, 204, 151)" )
             return "rgb(110, 224, 110)"
         else
             return "rgb(251, 164, 105)"
     }
-    function setGreen() {
+
+    // Button state
+    let activeButton = 'Available';
+
+    function setActiveButton(buttonName) {
+      activeButton = buttonName;
+    }
+
+    // Handle button clicks
+    function handleAvailableClick() {
+        setActiveButton('Available');
         ec.setOption("selectBackgroundColor", "rgb(151, 204, 151)");
     }
 
-    function setOrange() {
+    function handlePossibleClick() {
+        setActiveButton('Possible');
         ec.setOption("selectBackgroundColor", "rgb(207, 160, 129)");
     }
 </script>
@@ -80,8 +91,16 @@
     <h3>color in your availability</h3>
 
     <div class="palette">
-      <button id="green" on:click={setGreen}> Available </button>
-      <button id="orange" on:click={setOrange}> Possible </button>
+      <Button
+        cssId="green"
+        isActive={activeButton == "Available"}
+        onClick={handleAvailableClick}
+        name="Available" />
+      <Button
+        cssId="orange"
+        isActive={activeButton == "Possible"}
+        onClick={handlePossibleClick}
+        name="Possible" />
     </div>
   
     <Calendar bind:this={ec} {options} {plugins} />
@@ -115,6 +134,7 @@
         transition-property: background-color, border-color, color, box-shadow,
             filter;
         transition-duration: 0.3s;
+        cursor: pointer;
         font-weight: 700;
         text-align: center;
         padding: 17px 48px;
@@ -125,14 +145,6 @@
 
     button:hover {
         transform: scale(1.04);
-    }
-
-    #green {
-        background-color: rgb(110, 224, 110);
-    }
-
-    #orange {
-        background-color: rgb(251, 164, 105);
     }
 
     #submit {
