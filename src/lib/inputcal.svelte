@@ -87,7 +87,7 @@
         cssId="orange"
         isActive={activeButton == "Possible"}
         onClick={handlePossibleClick}
-        name="Possible"
+        name="If Need Be"
       />
     </div>
     <Calendar bind:this={ec} {options} {plugins} />
@@ -140,7 +140,7 @@
   #submit {
     background-color: #7896d0;
   }
-  
+
   .palette {
     text-align: center;
   }
