@@ -21,7 +21,7 @@
   $: hourlyEntries = generateHourlyEntries(hours, entriesData);
 </script>
 <div class="display-cal">
-  <h3>other's availability</h3>
+  <h3>Group Availability</h3>
 <div class="day-view-calendar">
   <div class="time-grid">
     {#each hours as hour, index (hour)}

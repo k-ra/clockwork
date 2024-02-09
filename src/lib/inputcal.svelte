@@ -24,7 +24,6 @@
       //ask if green or orange
       let colorInfo = { ...info, backgroundColor: getColor() };
       ec.addEvent(colorInfo);
-      // ...info + color
     },
     eventBackgroundColor: "rgb(110, 224, 110)",
     selectBackgroundColor: "rgb(151, 204, 151)",
@@ -32,6 +31,8 @@
 
   function submitEvents() {
     let events = ec.getEvents(); // Your events
+    document.getElementById("submit").style.backgroundColor = "grey";
+
 
     // Update the entries store with new events
     entries.update((currentEntries) => {
@@ -131,14 +132,15 @@
     background-color: cornflowerblue;
   }
 
+
   button:hover {
     transform: scale(1.04);
   }
 
   #submit {
-    background-color: #aaadb3;
+    background-color: #7896d0;
   }
-
+  
   .palette {
     text-align: center;
   }
