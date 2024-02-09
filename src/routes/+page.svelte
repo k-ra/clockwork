@@ -16,6 +16,5 @@
     height: 100vh;
     flex-direction: row;
   }
+
 </style>
-
-

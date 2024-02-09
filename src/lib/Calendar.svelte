@@ -3,7 +3,7 @@
   import { formatHour, parseHour, isInTimeRange } from '../utils/timeHelpers';
   import { entries } from '../stores/index.js';
 
-  let hours = Array.from({ length: 13 }, (_, i) => formatHour(9 + i));
+  let hours = Array.from({ length: 12 }, (_, i) => formatHour(9 + i));
 
   // Create entriesData from the store
   $: entriesData = $entries;
@@ -20,8 +20,8 @@
 
   $: hourlyEntries = generateHourlyEntries(hours, entriesData);
 </script>
-  
-
+<div class="display-cal">
+  <h3>other's availability</h3>
 <div class="day-view-calendar">
   <div class="time-grid">
     {#each hours as hour, index (hour)}
@@ -37,18 +37,18 @@
     {/each}
   </div>
 </div>
-  
+</div>
   
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200;300&display=swap');
-  
+
   .day-view-calendar {
     display: flex;
     flex-direction: column;
-    width: 20%;
+    width: 100%;
     max-height: 80vh;
     border: 1px solid #ccc;
-    padding: 20px;
+    padding: 10px;
   }
   .time-grid {
     position: relative;
@@ -70,5 +70,10 @@
     text-align: right;
     font-family: 'Noto Sans', sans-serif;
   }
+  h3 {
+    text-align: center;
+    font-family: "Noto Sans", sans-serif;
+  }
+
 </style>
   

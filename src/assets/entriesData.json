@@ -21,12 +21,12 @@
     },
     {
       "start": "7:00 PM",
-      "end": "9:00 PM",
+      "end": "8:00 PM",
       "type": "possible"
     },
     {
       "start": "1:00 PM",
-      "end": "4:00 PM",
+      "end": "3:00 PM",
       "type": "available"
     },
     {
@@ -51,7 +51,7 @@
     },
     {
       "start": "7:00 PM",
-      "end": "10:00 PM",
+      "end": "9:00 PM",
       "type": "available"
     }
 ]
