@@ -1,6 +1,7 @@
 ## CLOCKWORK CREW 
 Luke Richey and Kyra Mo
 
+![image](clockwork.png)
 ## DEMO:
 Please find our demo video "Demo.mov" in the github repo above!
 
