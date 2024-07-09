@@ -1,10 +1,9 @@
 ## CLOCKWORK CREW 
 Luke Richey and Kyra Mo
+## DEMO:
+Please find our demo video at [this link](https://youtu.be/Ctfq514FURI)!
 
 ![image](clockwork.png)
-## DEMO:
-Please find our demo video "Demo.mov" in the github repo above!
-
 ## CREDITS:
 Svelte Skeleton: (https://github.com/sveltejs/kit/tree/main/packages/create-svelte)
 Calendar View: vkurko.github.io/calendar/ and therefore under the MIT License. 
